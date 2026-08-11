@@ -1,0 +1,50 @@
+# ============================================================================
+# COSMA Helpdesk - Configuration
+# ============================================================================
+# This is the ONLY file that needs editing for deployment.
+# Both the worker and the ask-cosma client source this file.
+#
+# When you migrate to /cosma/apps later, just change HELPDESK_ROOT below.
+# ============================================================================
+
+# --- Paths (must be on shared filesystem visible from EVERY node) ----------
+
+# Root of all helpdesk data: queue, logs, heartbeat.
+# IMPORTANT: must be on a shared filesystem (NOT $HOME, which is per-node).
+export HELPDESK_ROOT="/your/shared/filesystem/helpdesk"
+
+# Path to the existing index built by ingest.py.
+# Currently in your home; we'll copy it to shared FS during install.
+export HELPDESK_INDEX_DIR="${HELPDESK_ROOT}/cosma_index"
+
+# Derived paths (don't edit these unless you know why)
+export HELPDESK_QUEUE_DIR="${HELPDESK_ROOT}/queue"
+export HELPDESK_LOG_FILE="${HELPDESK_ROOT}/feedback.log"
+export HELPDESK_HEARTBEAT_FILE="${HELPDESK_ROOT}/worker.heartbeat"
+
+# Path to the Python interpreter the worker uses.
+# Must have llama-index, ollama client, etc. installed.
+
+# Keep venv in home for now if it fits; otherwise migrate too (see Step 4)
+export HELPDESK_PYTHON="${HOME}/hpc-helpdesk-env/bin/python"
+
+# --- Ollama / models (worker only - clients never touch Ollama) ------------
+
+export HELPDESK_OLLAMA_HOST="http://127.0.0.1:11436"
+export HELPDESK_LLM_MODEL="llama3.1:8b"
+export HELPDESK_EMBED_MODEL="nomic-embed-text"
+
+# Ollama needs to know where the shared models live (used by start-ollama.sh).
+export OLLAMA_MODELS="/cosma/apps/durham/dc-qais1/ollama-models"
+
+# --- Tunables --------------------------------------------------------------
+
+export HELPDESK_MAX_QUERY_LEN=1000
+export HELPDESK_CLIENT_POLL_INTERVAL=0.5
+export HELPDESK_CLIENT_TIMEOUT_S=120
+export HELPDESK_WORKER_POLL_INTERVAL=0.5
+
+# --- Contact info shown to users -------------------------------------------
+
+export HELPDESK_ADMIN_EMAIL="your-email@your-institution.ac.uk"
+export HELPDESK_SUPPORT_EMAIL="hpc-support@your-institution.ac.uk"

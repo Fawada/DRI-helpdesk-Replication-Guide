@@ -1,0 +1,11 @@
+install/config.sh
+config.sh
+*_index/
+*.log
+queue/
+streams/
+responses/
+__pycache__/
+*.pyc
+hpc-helpdesk-env/
+*.heartbeat
