@@ -129,7 +129,7 @@ bash install-user.sh && source ~/.bashrc
 ask-helpdesk "how do I submit a job?"
 ```
 
-**See [Replication.md]([Replication.md]) for the full step-by-step guide.**
+**See [docs/REPLICATION.md](docs/REPLICATION.md) for the full step-by-step guide.**
 
 ---
 
