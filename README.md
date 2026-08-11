@@ -75,7 +75,7 @@ User on any login node
 ├── config.sh.example    # THE only file you edit per deployment
 ├── .gitignore
 ├── REPLICATION.md       # Full step-by-step replication guide
-└── research_log_2026-08-11.md   # Development log with technical findings
+
 ```
 
 ---
