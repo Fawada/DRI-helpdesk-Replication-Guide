@@ -129,7 +129,7 @@ bash install-user.sh && source ~/.bashrc
 ask-helpdesk "how do I submit a job?"
 ```
 
-**See [REPLICATION.md](REPLICATION.md) for the full step-by-step guide.**
+**See [REPLICATION.md]([REPLICATION.md](https://github.com/Fawada/DRI-helpdesk-Replication-Guide/blob/main/Replication.md)) for the full step-by-step guide.**
 
 ---
 
